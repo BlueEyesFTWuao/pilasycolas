@@ -43,6 +43,18 @@ public class operacionesPila <T extends Base> {
      return PilaInvertida;
      }
     
+     public static <T extends Base> Pila <T> concatenar(Pila<T> Pila01,Pila<T> Pila02){
+         
+         Pila<T> aux1=duplicarPila(Pila01);
+         Pila<T> aux2=duplicarPila(Pila02);
+         Pila<T> aux3=invertir(aux2);
+         
+         while (!aux3.estaVacia()){
+         aux1.apilar(aux3.desapilar());
+         
+         }
+        return aux1;
+     }
     
            
 }
